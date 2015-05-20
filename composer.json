@@ -1,0 +1,22 @@
+{
+	"name": "sansusan/yii2-jqwidgets-asset",
+	"description": "Jqwidgets Asset for Yii2",
+	"keywords": ["yii2", "jqwidgets"],
+	"type": "yii2-extension",
+	"license": "BSD-3-Clause",
+	"authors": [
+		{
+			"name": "Eremin A.V.",
+			"email": "sansusan@yandex.ru"
+		}
+	],
+	"require": {
+		"yiisoft/yii2": "~2.0",
+        "bower-asset/jqwidgets": "*"
+	},
+	"autoload": {
+		"psr-4": {
+			"sansusan\\jqwidgets\\": ""
+		}
+	}
+}
