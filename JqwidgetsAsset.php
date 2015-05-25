@@ -35,16 +35,16 @@ class JqwidgetsAsset extends AssetBundle
         parent::init();
     }
 
-
     protected function applyTheme()
     {
         if (!empty(self::$theme) && is_string(self::$theme))
             $theme = self::$theme;
         else
             $theme = 'base';
-        array_unshift($this->css, strtr('styles/jqx.{theme}.css', ['{theme}' => $theme]));
-    }
 
+        if ($theme != 'base') array_unshift($this->css, strtr('styles/jqx.{theme}.css', ['{theme}' => $theme]));
+        array_unshift($this->css, 'styles/jqx.base.css');
+    }
 
     protected function applyGlobalize()
     {
@@ -61,7 +61,7 @@ class JqwidgetsAsset extends AssetBundle
     {
         foreach (self::$extensions as $ex) {
             if (is_string($ex)) {
-                    array_push($this->js, strtr('{ex}.js', ['{ex}' => $ex]));
+                array_push($this->js, strtr('{ex}.js', ['{ex}' => $ex]));
             }
         }
     }
@@ -72,7 +72,7 @@ class JqwidgetsAsset extends AssetBundle
      * @param array $extensions
      * @return static
      */
-    public static function register($view,  $options = [], $extensions = [])
+    public static function register($view, $options = [], $extensions = [])
     {
         if (is_array($options)) {
             if (array_key_exists('theme', $options)) self::$theme = $options['theme'];
