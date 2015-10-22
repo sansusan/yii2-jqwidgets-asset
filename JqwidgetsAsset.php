@@ -8,7 +8,7 @@ use yii\web\View;
 class JqwidgetsAsset extends AssetBundle
 {
 
-    public $sourcePath = '@sansusan/jqwidgets/assets/jqwidgets-ver3.8.0/jqwidgets';
+    public $sourcePath = '@sansusan/jqwidgets/assets/jqwidgets-ver3.9.0/jqwidgets';
     public $css = [
     ];
     public $js = [
